@@ -1,0 +1,36 @@
+<template>
+	<div class="custom-card-overflow_hidden slds-var-m-bottom_small slds-box">
+		<lightning-layout multiple-rows="true">
+			<lightning-layout-item size="12">
+				<c-page-header-object-home
+					icon-name="standard:contact"
+					title="Contacts"
+					subtitle="All Contacts"
+					row-count={rowCount}
+				>
+				</c-page-header-object-home>
+			</lightning-layout-item>
+			<lightning-layout-item size="12">
+				<lightning-datatable
+					key-field="id"
+					columns={columns}
+					data={data}
+				></lightning-datatable>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+	<div class="custom-card-overflow_hidden slds-var-m-vertical_small slds-box">
+		<lightning-layout multiple-rows="true">
+			<lightning-layout-item size="12">
+				<c-page-header-record-home
+					icon-name="standard:contact"
+					object-api-name="Contact"
+					object-display-name="Contact"
+					record-name="Skylar Kuhic"
+					fields={fields}
+				></c-page-header-record-home>
+			</lightning-layout-item>
+			<lightning-layout-item size="12"> </lightning-layout-item>
+		</lightning-layout>
+	</div>
+</template>

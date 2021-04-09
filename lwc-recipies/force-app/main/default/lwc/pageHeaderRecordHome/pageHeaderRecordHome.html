@@ -1,0 +1,99 @@
+<template>
+	<div class="slds-page-header slds-page-header_record-home">
+		<div class="slds-page-header__row">
+			<div class="slds-page-header__col-title">
+				<div class="slds-media">
+					<div class="slds-media__figure">
+						<lightning-icon
+							icon-name={iconName}
+							alternative-text={objectApiName}
+						></lightning-icon>
+					</div>
+					<div class="slds-media__body">
+						<div class="slds-page-header__name">
+							<div class="slds-page-header__name-title">
+								<slot name="title">
+									<h1>
+										<span>{objectDisplayName}</span>
+										<span
+											class="slds-page-header__title slds-truncate"
+											title={recordName}
+											>{recordName}
+										</span>
+									</h1>
+								</slot>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slds-page-header__col-actions">
+				<div class="slds-page-header__controls">
+					<slot name="col-actions">
+						<div class="slds-page-header__control">
+							<lightning-button-stateful
+								label-when-off="Follow"
+								label-when-on="Following"
+								label-when-hover="Unfollow"
+								icon-name-when-off="utility:add"
+								icon-name-when-on="utility:check"
+								icon-name-when-hover="utility:close"
+								selected={isSelected}
+								onclick={handleClick}
+							>
+							</lightning-button-stateful>
+						</div>
+						<div class="slds-page-header__control">
+							<lightning-button-group>
+								<lightning-button
+									label="Edit"
+									title="Edit"
+								></lightning-button>
+								<lightning-button
+									label="Delete"
+									title="Delete"
+								></lightning-button>
+								<lightning-button
+									label="Clone"
+									title="Clone"
+								></lightning-button>
+								<lightning-button-icon
+									icon-name="utility:down"
+									alternative-text="More Actions"
+									variant="border-filled"
+								></lightning-button-icon>
+							</lightning-button-group>
+						</div>
+					</slot>
+				</div>
+			</div>
+		</div>
+		<div class="slds-page-header__row slds-page-header__row_gutters">
+			<div class="slds-page-header__col-details">
+				<slot name="detail-row">
+					<ul class="slds-page-header__detail-row">
+						<template for:each={fields} for:item="field">
+							<li
+								class="slds-page-header__detail-block"
+								key={field.apiName}
+							>
+								<div
+									class="slds-text-title slds-truncate"
+									title={field.label}
+								>
+									{field.label}
+								</div>
+								<div
+									class="slds-truncate"
+									title={field.displayValue}
+								>
+									{field.displayValue}
+								</div>
+							</li>
+						</template>
+					</ul>
+				</slot>
+			</div>
+		</div>
+	</div>
+</template>

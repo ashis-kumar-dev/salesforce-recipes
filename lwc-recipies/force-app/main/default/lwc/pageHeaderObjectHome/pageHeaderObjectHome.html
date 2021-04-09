@@ -1,0 +1,128 @@
+<template>
+	<!-- markup is taken from https://lightningdesignsystem.com/components/page-headers/ -->
+	<div class="slds-page-header">
+		<div class="slds-page-header__row">
+			<div class="slds-page-header__col-title">
+				<div class="slds-media">
+					<div class="slds-media__figure">
+						<slot name="icon">
+							<lightning-icon
+								icon-name={iconName}
+								alternative-text={iconName}
+							></lightning-icon>
+						</slot>
+					</div>
+					<div class="slds-media__body">
+						<div class="slds-page-header__name">
+							<div class="slds-page-header__name-title">
+								<h1>
+									<slot name="title">
+										<span>{title}</span>
+										<span
+											class="slds-page-header__title slds-truncate"
+											title={subtitle}
+										>
+											{subtitle}
+										</span>
+									</slot>
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slds-page-header__col-actions">
+				<div class="slds-page-header__controls">
+					<div class="slds-page-header__control">
+						<slot name="col-actions">
+							<lightning-button-group>
+								<lightning-button
+									label="New"
+								></lightning-button>
+								<lightning-button-icon
+									icon-name="utility:down"
+									alternative-text="More Actions"
+									variant="border-filled"
+								></lightning-button-icon>
+							</lightning-button-group>
+						</slot>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slds-page-header__row">
+			<div class="slds-page-header__col-meta">
+				<p class="slds-page-header__meta-text">
+					<span>{rowCount} items • </span>
+					<lightning-relative-date-time
+						value={now}
+					></lightning-relative-date-time>
+				</p>
+			</div>
+			<div class="slds-page-header__col-controls">
+				<div class="slds-page-header__controls">
+					<slot name="col-controls">
+						<div class="slds-page-header__control">
+							<div
+								class="slds-dropdown-trigger slds-dropdown-trigger_click"
+							>
+								<lightning-button-icon
+									icon-name="utility:settings"
+									alternative-text="List View Controls"
+									variant="border-filled"
+								></lightning-button-icon>
+							</div>
+						</div>
+						<div class="slds-page-header__control">
+							<div
+								class="slds-dropdown-trigger slds-dropdown-trigger_click"
+							>
+								<lightning-button-icon
+									icon-name="utility:table"
+									alternative-text="Change View"
+									variant="border-filled"
+								></lightning-button-icon>
+							</div>
+						</div>
+						<div class="slds-page-header__control">
+							<div
+								class="slds-dropdown-trigger slds-dropdown-trigger_click"
+							>
+								<lightning-button-icon
+									icon-name="utility:edit"
+									alternative-text="Edit View"
+									variant="border-filled"
+								></lightning-button-icon>
+							</div>
+						</div>
+						<div class="slds-page-header__control">
+							<div
+								class="slds-dropdown-trigger slds-dropdown-trigger_click"
+							>
+								<lightning-button-icon
+									icon-name="utility:refresh"
+									alternative-text="Refresh View"
+									variant="border-filled"
+								></lightning-button-icon>
+							</div>
+						</div>
+						<div class="slds-page-header__control">
+							<lightning-button-group>
+								<lightning-button-icon
+									icon-name="utility:chart"
+									alternative-text="Chart"
+									variant="border-filled"
+								></lightning-button-icon>
+								<lightning-button-icon
+									icon-name="utility:filterList"
+									alternative-text="Filter"
+									variant="border-filled"
+								></lightning-button-icon>
+							</lightning-button-group>
+						</div>
+					</slot>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
