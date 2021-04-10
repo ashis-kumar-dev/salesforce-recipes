@@ -12,4 +12,4 @@ package.xml
 **/__tests__/**
 
 # Local examples for LWC previews
-force-app/main/default/lwc/pageHeaderExample
+force-app/main/default/lwc/*Example

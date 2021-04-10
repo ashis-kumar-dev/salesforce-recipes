@@ -1,0 +1,34 @@
+<template>
+	<c-modal title="Modal Demo" variant="no-header">
+		<p>
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+			est odit quas hic dolor illo? Similique omnis illo aperiam quo in
+			amet sint, veniam ea neque modi consectetur cum doloribus!
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+			nostrum molestias dolore id laboriosam ratione illum, magnam nobis
+			voluptate autem sed odio inventore molestiae sunt iusto rerum
+			tempore necessitatibus! Officia quo cupiditate quam fugiat modi
+			voluptate nihil saepe! Magni earum dolorum nam ratione assumenda
+			quos sed alias corporis incidunt? Debitis.
+		</p>
+
+		<div slot="footer">
+			<button
+				class="slds-button slds-button_neutral"
+				onclick={handleCancel}
+				type="button"
+			>
+				Cancel
+			</button>
+			<button class="slds-button slds-button_brand" type="button">
+				Save
+			</button>
+		</div>
+	</c-modal>
+	<lightning-button
+		label="Open Modal"
+		onclick={handleClick}
+	></lightning-button>
+</template>
