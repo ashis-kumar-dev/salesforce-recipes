@@ -1,0 +1,22 @@
+<template>
+	<c-page-header-object-home
+		icon-name="standard:account"
+		title="Accounts"
+		subtitle="All Accounts"
+		row-count={rows}
+	></c-page-header-object-home>
+	<c-full-height-container>
+		<lightning-datatable
+			key-field="Id"
+			data={data}
+			columns={columns}
+			enable-infinite-loading
+			hide-checkbox-column
+			is-loading={isLoading}
+			show-row-number-column
+		></lightning-datatable>
+	</c-full-height-container>
+	<template if:true={error}>
+		<p class="slds-text-color_destructive">{error}</p>
+	</template>
+</template>
