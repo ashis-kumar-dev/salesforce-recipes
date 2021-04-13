@@ -10,10 +10,12 @@
 			key-field="Id"
 			data={data}
 			columns={columns}
-			enable-infinite-loading
 			hide-checkbox-column
 			is-loading={isLoading}
 			show-row-number-column
+			sorted-by={sortedBy}
+			sorted-direction={sortedDirection}
+			onsort={updateColumnSorting}
 		></lightning-datatable>
 	</c-full-height-container>
 	<template if:true={error}>
